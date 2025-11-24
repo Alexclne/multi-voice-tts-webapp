@@ -2,6 +2,10 @@
 
 ## Overview
 
+![1763994505556](image/README/1763994505556.png)
+
+![1763994559566](image/README/1763994559566.png)
+
 This project is a web-based Text-to-Speech (TTS) platform built with FastAPI and Edge-TTS. It provides a modern user interface allowing users to input text, select a voice among all available Microsoft Neural voices, adjust playback speed and pitch, and download or play the generated audio directly in the browser.
 
 The system dynamically fetches the full list of available voices from Edge-TTS, ensuring automatic updates without maintaining a manual list. The frontend allows selection of language and voice combinations, supporting a fully multilingual experience.
