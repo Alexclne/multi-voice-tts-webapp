@@ -13,7 +13,6 @@ const player = document.getElementById("player");
 const downloadLink = document.getElementById("downloadLink");
 const themeToggle = document.getElementById("themeToggle");
 
-// === CARICA VOCI DAL BACKEND ===
 async function loadVoices() {
   const res = await fetch("/voices");
   voices = await res.json();
@@ -50,7 +49,6 @@ function updateVoiceSelect() {
 
 langSelect.addEventListener("change", updateVoiceSelect);
 
-// === SLIDER VISUAL UPDATE ===
 speedRange.addEventListener("input", () => {
   speedValue.textContent = speedRange.value;
 });
@@ -59,7 +57,6 @@ pitchRange.addEventListener("input", () => {
   pitchValue.textContent = pitchRange.value;
 });
 
-// === TEMA DARK/LIGHT ===
 function applyTheme(theme) {
   document.body.classList.remove("light", "dark");
   document.body.classList.add(theme);
@@ -74,7 +71,6 @@ themeToggle.addEventListener("change", () => {
   applyTheme(themeToggle.checked ? "dark" : "light");
 });
 
-// === GENERA AUDIO ===
 generateBtn.addEventListener("click", generateAudio);
 
 async function generateAudio() {
@@ -117,5 +113,4 @@ async function generateAudio() {
   generateBtn.textContent = "Genera Audio";
 }
 
-// === AVVIO ===
 loadVoices();
