@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generatore TTS Avanzato</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="light">
+  <div class="app-container">
+    <header class="header">
+      <h1>Generatore Audio TTS</h1>
+
+      <div class="theme-toggle">
+        <span>🌞</span>
+        <label class="switch">
+          <input type="checkbox" id="themeToggle">
+          <span class="slider round"></span>
+        </label>
+        <span>🌙</span>
+      </div>
+    </header>
+
+    <main class="main">
+      <label for="textInput" class="label">Testo da convertire</label>
+      <textarea id="textInput" placeholder="Inserisci il testo da trasformare in audio..."></textarea>
+
+      <div class="controls">
+        <div class="control-group">
+          <label class="label">Lingua</label>
+          <select id="langSelect"></select>
+        </div>
+
+        <div class="control-group">
+          <label class="label">Voce</label>
+          <select id="voiceSelect"></select>
+        </div>
+
+        <div class="control-group">
+          <label for="speedRange" class="label">
+            Velocità: <span id="speedValue">1.0</span>x
+          </label>
+          <input type="range" id="speedRange" min="0.5" max="1.5" step="0.05" value="1.0">
+        </div>
+
+        <div class="control-group">
+          <label for="pitchRange" class="label">
+            Pitch: <span id="pitchValue">0</span> semitoni
+          </label>
+          <input type="range" id="pitchRange" min="-6" max="6" step="1" value="0">
+        </div>
+      </div>
+
+      <button id="generateBtn">Genera Audio</button>
+
+      <div class="output">
+        <audio id="player" controls style="display:none;"></audio>
+        <a id="downloadLink" class="download" style="display:none;">Scarica MP3</a>
+      </div>
+    </main>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
